@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sentence Embeddings for Question Similarity</title>
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+<body>
+    <h1>Sentence Embeddings for Question Similarity</h1>
+
+    <h2>Project Description</h2>
+
+    <p>The goal of this project is to build a Quora question similarity classifier that detects duplicate questions. The purpose is to enhance the user experience on Quora by providing better question suggestions, incorporating functionalities such as grammar check and question auto-complete.</p>
+
+    <h2>Motivation</h2>
+
+    <p>The motivation behind this project is to enhance the user experience on Quora. Duplicate questions are a common occurrence, and detecting them accurately can help in reducing redundancy and providing more relevant and diverse content to users. By implementing a question similarity classifier, Quora can offer better suggestions, reduce repetitive questions, and enhance the overall quality of the platform.</p>
+
+    <h2>Dataset</h2>
+
+    <p>The project utilizes the Quora Question Pairs dataset, which can be accessed at the following link: <a href="https://www.kaggle.com/competitions/quora-question-pairs/data">Quora Question Pairs Dataset</a>. This dataset consists of question pairs, with labels indicating whether the questions are duplicate or not. It serves as the primary resource for training and evaluating the question similarity classifier.</p>
+
+    <h2>Model Performance</h2>
+
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+        </tr>
+        <tr>
+            <td>Logistic Regression</td>
+            <td>74.9%</td>
+        </tr>
+        <tr>
+            <td>SVM</td>
+            <td>72.45%</td>
+        </tr>
+        <tr>
+            <td>Random Forest</td>
+            <td>76%</td>
+        </tr>
+        <tr>
+            <td>LSTM</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>Sentence BERT</td>
+            <td>85%</td>
+        </tr>
+    </table>
+
+    <h2>Getting Started</h2>
+
+    <p>To get started with the project, follow the steps below:</p>
+
+    <ol>
+        <li>Clone the repository:</li>
+        <pre>git clone https://github.com/your-username/sentence-embeddings-question-similarity.git</pre>
+        <li>Download the Quora Question Pairs dataset from the provided link and place it in the <code>data/</code> directory.</li>
+        <li>Explore the Jupyter notebooks in the <code>notebooks/</code> directory to understand the data analysis, model training, and evaluation processes.</li>
+        <li>Use the provided source code and utility scripts in the <code>src/</code> directory to build and customize your own question similarity classifier.</li>
+    </ol>
+</body>
+</html>
