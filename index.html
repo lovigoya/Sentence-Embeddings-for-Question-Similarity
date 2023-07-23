@@ -1,122 +1,176 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Sentence Embeddings for Question Similarity</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 20px;
-        }
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>Sentence Embeddings for Question Similarity</title> 
+        <style> body { font-family: Arial, sans-serif; background-color: #f0f8ff; margin: 20px; }
+            h1, h2 {
+        color: #00407d;
+    }
+    .two-column-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .image-column {
+        flex: 1;
+    }
+
+    .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .styled-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+    }
+
+    .styled-list li:before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        font-size: 20px;
+    }
+
+    .styled-list li:last-child {
+        margin-bottom: 0;
+    }
+    .bullet-points-column {
+        flex: 1;
+        padding: 20px;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+    
+    .card {
+        background-color: #fff;
+        padding: 20px; 
+        border: 1px solid #bed7eb;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px #bed7eb;
+        margin-bottom: 20px;
+    }
+    
+    .card h2 {
+        color: #00407d;
+        margin-top: 0;
+    }
+    
+    table {
+        background-color: #f5fafa;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #c2d6e9;
+    }
+    
+    tr:hover {
+        background-color: #f0f8ff;
+    }
+    
+    pre {
+        background-color: #f5fafa;
+        padding: 10px;
+        border-radius: 5px;
+        color: #00407d;
+    }
+    
+    ol {
+        padding-left: 20px;
+    }
+    
+    a {
+        color: #005db2;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+    </head> <body> 
+        <div style="padding-left: 10%; padding-right: 10%; padding-top: 0%; padding-bottom: 5%;">
+        <h1>Sentence Embeddings for Question Similarity [<u><a href="https://github.com/lovigoya/Sentence-Embeddings-for-Question-Similarity" style="font-size: 25px; color: blue;">link</a></u>]</h1>
+        <div class="card">
+            <h2>Project Description</h2>
         
-        h1, h2 {
-            color: #333;
-        }
+            <p>The goal of this project is to build a Quora question similarity classifier that detects duplicate questions. The purpose is to enhance the user experience on Quora by providing better question suggestions, incorporating functionalities such as grammar check and question auto-complete.</p>
+        </div>
         
-        p {
-            line-height: 1.5;
-        }
+        <div class="card">
+            <h2>Motivation</h2>
         
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+            <p>The motivation behind this project is to enhance the user experience on Quora. Duplicate questions are a common occurrence, and detecting them accurately can help in reducing redundancy and providing more relevant and diverse content to users. By implementing a question similarity classifier, Quora can offer better suggestions, reduce repetitive questions, and enhance the overall quality of the platform.</p>
+        </div>
         
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+        <div class="card">
+            <h2>Dataset</h2>
         
-        tr:hover {
-            background-color: #f5f5f5;
-        }
+            <p>The project utilizes the Quora Question Pairs dataset, which can be accessed at the following link: <a href="https://www.kaggle.com/competitions/quora-question-pairs/data">Quora Question Pairs Dataset</a>. This dataset consists of question pairs, with labels indicating whether the questions are duplicate or not. It serves as the primary resource for training and evaluating the question similarity classifier.</p>
+        </div>
         
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-        }
+        <div class="card">
+            <h2>Model Performance</h2>
+        <div class="two-column-container">
+            <div class="image-column">
+                <img src="artifacts/model_perfs.png" alt="Model Performance" style="width: 80%;height: auto;">
+            </div>
+            <div class="bullet-points-column" style="padding-top: 4%;">
+                <ul class="styled-list">
+                    <li>Logistic Regression achieved an accuracy of 74.9%, making it the lowest-performing model in the table.</li>
+                    <li>The SVM (Support Vector Machine) model achieved an accuracy of 72.45%, which is slightly lower than Logistic Regression.</li>
+                    <li>Random Forest outperformed both Logistic Regression and SVM with an accuracy of 76%.</li>
+                    <li>LSTM (Long Short-Term Memory), a type of neural network commonly used for sequential data, achieved an accuracy of 80%, showing significant improvement over the previous models.</li>
+                    <li>Sentence BERT (Bidirectional Encoder Representations from Transformers) performed the best among all the models with an impressive accuracy of 85%, making it the most accurate model in the table.</li>
+                </ul>
+            </div>
+        </div>
+        </div>
         
-        ol {
-            padding-left: 20px;
-        }
+        <div class="card">
+            <h2>Repository Structure</h2>
         
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
+            <pre>
+            - README.md              # Project description and information
+            - data/                  # Folder containing dataset files 
+            - notebooks/             # Jupyter notebooks for data analysis, model training, and evaluation
+            - models/                # Trained model files
+            - src/                   # Source code and utility scripts
+            </pre>
+        </div>
         
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <h1>Sentence Embeddings for Question Similarity</h1>
-
-    <h2>Project Description</h2>
-
-    <p>The goal of this project is to build a Quora question similarity classifier that detects duplicate questions. The purpose is to enhance the user experience on Quora by providing better question suggestions, incorporating functionalities such as grammar check and question auto-complete.</p>
-
-    <h2>Motivation</h2>
-
-    <p>The motivation behind this project is to enhance the user experience on Quora. Duplicate questions are a common occurrence, and detecting them accurately can help in reducing redundancy and providing more relevant and diverse content to users. By implementing a question similarity classifier, Quora can offer better suggestions, reduce repetitive questions, and enhance the overall quality of the platform.</p>
-
-    <h2>Dataset</h2>
-
-    <p>The project utilizes the Quora Question Pairs dataset, which can be accessed at the following link: <a href="https://www.kaggle.com/competitions/quora-question-pairs/data">Quora Question Pairs Dataset</a>. This dataset consists of question pairs, with labels indicating whether the questions are duplicate or not. It serves as the primary resource for training and evaluating the question similarity classifier.</p>
-
-    <h2>Model Performance</h2>
-
-    <table>
-        <tr>
-            <th>Model</th>
-            <th>Accuracy</th>
-        </tr>
-        <tr>
-            <td>Logistic Regression</td>
-            <td>74.9%</td>
-        </tr>
-        <tr>
-            <td>SVM</td>
-            <td>72.45%</td>
-        </tr>
-        <tr>
-            <td>Random Forest</td>
-            <td>76%</td>
-        </tr>
-        <tr>
-            <td>LSTM</td>
-            <td>80%</td>
-        </tr>
-        <tr>
-            <td>Sentence BERT</td>
-            <td>85%</td>
-        </tr>
-    </table>
-
-    <h2>Repository Structure</h2>
-
-    <pre>
-    - README.md              # Project description and information
-    - data/                  # Folder containing dataset files
-    - notebooks/             # Jupyter notebooks for data analysis, model training, and evaluation
-    - models/                # Trained model files
-    - src/                   # Source code and utility scripts
-    </pre>
-
-    <h2>Getting Started</h2>
-
-    <p>To get started with the project, follow the steps below:</p>
-
-    <ol>
-        <li>Clone the repository:</li>
-        <pre>git clone https://github.com/your-username/sentence-embeddings-question-similarity.git</pre>
-        <li>Download the Quora Question Pairs dataset from the provided link and place it in the <code>data/</code> directory.</li>
-        <li>Explore the Jupyter notebooks in the <code>notebooks/</code> directory to understand the data analysis, model training, and evaluation processes.</li>
-        <li>Use the provided source code and utility scripts in the <code>src/</code> directory to build and customize your own question similarity classifier.</li>
-    </ol>
-</body>
-</html>
+        <div class="card">
+            <h2>Getting Started</h2>
+        
+            <p>To get started with the project, follow the steps below:</p>
+        
+            <ol class="styled-list">
+                <li>Clone the repository:</li>
+                <pre>https://github.com/lovigoya/Sentence-Embeddings-for-Question-Similarity.git</pre>
+                
+                <li>Download the Quora Question Pairs dataset from the provided link and place it in the <code>data/</code> directory.</li>
+                
+                <li>Explore the Jupyter notebooks in the <code>notebooks/</code> directory to understand the data analysis, model training, and evaluation processes.</li>
+                
+                <li>Use the provided source code and utility scripts in the <code>src/</code> directory to build and customize your own question similarity classifier.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    </body> </html> 
